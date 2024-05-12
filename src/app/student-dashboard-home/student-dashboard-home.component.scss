@@ -1,0 +1,21 @@
+.example-card {
+  width: 1200px;
+  height: 300px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  margin-top: 1rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}

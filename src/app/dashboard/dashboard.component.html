@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar style="position: sticky;top: 0;z-index: 5;">
     <button mat-icon-button>
         <mat-icon>school</mat-icon>
     </button>
@@ -9,7 +9,7 @@
             <mat-icon>dashboard</mat-icon>
             Dashboard
         </button>
-        <button mat-button>
+        <button routerLink="student-dashboard" mat-button>
             <mat-icon>group</mat-icon>
             Students
         </button>
@@ -43,7 +43,7 @@
     <div class="quickAccess">
         <h2>Quick access</h2>
         <div class="cards">
-            <mat-card class="example-card">
+            <mat-card routerLink="student-dashboard" class="example-card">
                 <mat-card-header>
                     <mat-card-title><mat-icon>group</mat-icon></mat-card-title>
                     <mat-card-subtitle>Students</mat-card-subtitle>

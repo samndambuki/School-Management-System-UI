@@ -7,12 +7,20 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+import { StudentDashboardHomeComponent } from './student-dashboard-home/student-dashboard-home.component';
+import { AddStudentDialogComponent } from './add-student-dialog/add-student-dialog.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    StudentDashboardComponent,
+    StudentDashboardHomeComponent,
+    AddStudentDialogComponent,
   ],
   imports: [
     BrowserModule,
