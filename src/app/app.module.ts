@@ -10,9 +10,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { StudentDashboardHomeComponent } from './student-dashboard-home/student-dashboard-home.component';
 import { AddStudentDialogComponent } from './add-student-dialog/add-student-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { XsrfInterceptor } from './xsrf-interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,16 @@ import { AddStudentDialogComponent } from './add-student-dialog/add-student-dial
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: XsrfInterceptor,
+    multi: true,
+  },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

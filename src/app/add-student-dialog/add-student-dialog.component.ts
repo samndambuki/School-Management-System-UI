@@ -1,6 +1,6 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { MatDialogRef } from '@angular/material/dialog';
 
@@ -19,7 +19,7 @@ export class AddStudentDialogComponent {
     phone_number: new FormControl()
   });
 
-  constructor(private http: HttpClient, private api: ApiService, private dialogRef: MatDialogRef<AddStudentDialogComponent>) { }
+  constructor(private http: HttpClient, private api: ApiService, private dialogRef: MatDialogRef<AddStudentDialogComponent>, private fb: FormBuilder) { }
 
   onSubmit() {
     const formData = this.studentForm.value;
@@ -27,6 +27,7 @@ export class AddStudentDialogComponent {
     this.http.post(url, formData, { withCredentials: true, observe: 'response' }).subscribe({
       next: (response: HttpResponse<any>) => {
         if (response.ok) {
+          console.log(response.body)
           this.dialogRef.close();
         }
       }
