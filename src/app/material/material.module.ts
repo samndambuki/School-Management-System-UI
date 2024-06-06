@@ -9,11 +9,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {
+    MatNativeDateModule,
+} from '@angular/material/core';
 
 @NgModule({
     exports: [
         MatToolbarModule, MatButtonModule, MatIconModule, MatCardModule,
-        MatSidenavModule, MatListModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatSnackBarModule
+        MatSidenavModule, MatListModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule
     ]
 })
 export class MaterialModule { }

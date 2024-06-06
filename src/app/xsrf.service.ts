@@ -11,6 +11,6 @@ export class XsrfService {
   }
 
   get_xsrf_cookie() {
-    this.http.get(this.api.apiUrl + '/sanctum/csrf-cookie', { withCredentials: true }).subscribe()
+    this.http.get(this.api.base_uri + 'sanctum/csrf-cookie', { withCredentials: true }).subscribe()
   }
 }

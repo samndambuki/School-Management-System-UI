@@ -23,7 +23,7 @@ export class AddStudentDialogComponent {
 
   onSubmit() {
     const formData = this.studentForm.value;
-    const url = `${this.api.apiUrl}students`;
+    const url = `${this.api.base_uri_api}students`;
     this.http.post(url, formData, { withCredentials: true, observe: 'response' }).subscribe({
       next: (response: HttpResponse<any>) => {
         if (response.ok) {

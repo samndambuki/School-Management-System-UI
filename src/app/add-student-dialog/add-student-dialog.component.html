@@ -10,10 +10,18 @@
             <mat-label>Last Name</mat-label>
             <input matInput placeholder="Last Name" formControlName="last_name">
         </mat-form-field>
-        <mat-form-field style="width: 100%;">
+        <!-- <mat-form-field style="width: 100%;">
             <mat-label>Date of Birth</mat-label>
             <input matInput placeholder="Date of Birth" formControlName="date_of_birth">
+        </mat-form-field> -->
+        <mat-form-field style="width: 100%;">
+            <mat-label>Date of birth</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+
         <mat-form-field style="width: 100%;">
             <mat-label>Gender</mat-label>
             <input matInput placeholder="Gender" formControlName="gender">

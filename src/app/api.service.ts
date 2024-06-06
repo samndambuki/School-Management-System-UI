@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  public apiUrl = 'http://localhost:8000/api';
+  base_uri = '//localhost:8000/'
+  base_uri_api = this.base_uri + 'api/'
 
   constructor() { }
 }

@@ -8,8 +8,14 @@ import { StudentDashboardHomeComponent } from './student-dashboard-home/student-
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   {
-    path: 'student-dashboard', component: StudentDashboardComponent, children: [
-      { path: '', component: StudentDashboardHomeComponent }
+    path: 'student-dashboard', component: StudentDashboardComponent,
+    data: { active: 'student-dashboard' },
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'prefix' },
+      {
+        path: 'home', component: StudentDashboardHomeComponent,
+        data: { active: 'home' }
+      }
     ]
   }
 

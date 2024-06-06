@@ -32,7 +32,7 @@ export class XsrfInterceptor implements HttpInterceptor {
       tap({
         error: (errorResponse: any) => {
           if (errorResponse.status === 419) {
-            this.http.get(this.api.apiUrl + 'sanctum/csrf-cookie', { withCredentials: true }).subscribe()
+            this.http.get(this.api.base_uri + 'sanctum/csrf-cookie', { withCredentials: true }).subscribe()
           }
           if (errorResponse.status === 401) {
             const allowedPaths: string[] = ['/forgot-password', '/login', '/start', '/password-reset', '/submitted', '/cookie-policy']; // Array of allowed paths
@@ -43,7 +43,7 @@ export class XsrfInterceptor implements HttpInterceptor {
             // Check if the current route does not start with any of the allowed paths
             if (!allowedPaths.some(path => currentRoute.startsWith(path))) {
               // this.router.navigate(['/login'], { queryParams: { redirect_to: } });
-              window.location.href = `${this.api.apiUrl}/login?redirect_to=${window.location.origin}${this.router.url}`;
+              window.location.href = `${this.api.base_uri}/login?redirect_to=${window.location.origin}${this.router.url}`;
             }
           }
           if (errorResponse.status === 403) {
