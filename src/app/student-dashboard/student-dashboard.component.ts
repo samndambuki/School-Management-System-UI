@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, ViewChild } from '@angular/core';
 import { SidenavService } from '../sidenav.service';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Subscription } from 'rxjs';
@@ -8,48 +8,38 @@ import { Subscription } from 'rxjs';
   templateUrl: './student-dashboard.component.html',
   styleUrls: ['./student-dashboard.component.scss']
 })
-export class StudentDashboardComponent implements OnInit, OnDestroy, AfterViewInit {
-  // @ViewChild('sidenav') public sidenav: MatSidenav | null = null;
-  @ViewChild('sidenav') sidenav!: MatSidenav;
+export class StudentDashboardComponent implements OnDestroy, AfterViewInit {
+  @ViewChild('sidenav') public sidenav: MatSidenav | null = null;
+
   private sidenavSubscription: Subscription | null = null;
 
-  constructor(private sideNavService: SidenavService) { }
+  constructor(private sideNavService: SidenavService) {
+    this.sidenavSubscription = this.sideNavService.getSidenavState().subscribe(isOpen => {
 
-  // ngOnInit() {
+      if (isOpen) {
+        this.sidenav?.open();
+      }
+      else {
+        this.sidenav?.close();
+      }
+    })
 
-  //   this.sidenavSubscription = this.sideNavService.getSidenavState().subscribe(isOpen => {
-  //     if (isOpen) {
-  //       this.sidenav?.open;
-  //     }
-  //     else {
-  //       this.sidenav?.close;
-  //     }
-  //   })
-
-  //   //opem the sidenav when the component initializes
-  //   this.sideNavService.open();
-  // }
-
-  ngOnInit(): void {
-    console.log('Student DashboardComponent.ngOnInit() called');
-
+    //open the sidenav when the component initializes
+    this.sideNavService.open();
   }
 
   ngAfterViewInit() {
     this.sidenavSubscription = this.sideNavService.getSidenavState().subscribe(isOpen => {
-      console.log(`StudentDashBoardComponent: sidenav state changed to ${isOpen}`);
 
       if (isOpen) {
-        this.sidenav?.open;
+        this.sidenav?.open();
       }
       else {
-        this.sidenav?.close;
+        this.sidenav?.close();
       }
     })
 
-    console.log('StudentDashBoardComponent: calling sidenavService.open()');
-
-    //opem the sidenav when the component initializes
+    //open the sidenav when the component initializes
     this.sideNavService.open();
   }
 
@@ -61,10 +51,7 @@ export class StudentDashboardComponent implements OnInit, OnDestroy, AfterViewIn
   }
 
   clickMenu() {
-    console.log('StudentDashBoardComponent.clickMenu() called');
-
     this.sideNavService.toggle();
   }
-
 
 }

@@ -5,11 +5,12 @@
     <span>Academy</span>
 
     <div class="toolBarContents">
-        <button mat-button>
+        <button mat-button routerLink="/dashboard" routerLinkActive #dashboardLink="routerLinkActive"
+            [color]="dashboardLink.isActive?'primary':'undefined'">
             <mat-icon>dashboard</mat-icon>
             Dashboard
         </button>
-        <button routerLink="student-dashboard" mat-button>
+        <button routerLink="/student-dashboard" mat-button>
             <mat-icon>group</mat-icon>
             Students
         </button>
@@ -43,7 +44,7 @@
     <div class="quickAccess">
         <h2>Quick access</h2>
         <div class="cards">
-            <mat-card routerLink="student-dashboard" class="example-card">
+            <mat-card routerLink="/student-dashboard" class="example-card">
                 <mat-card-header>
                     <mat-card-title><mat-icon>group</mat-icon></mat-card-title>
                     <mat-card-subtitle>Students</mat-card-subtitle>

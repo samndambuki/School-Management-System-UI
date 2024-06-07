@@ -9,7 +9,8 @@
     <span>Academy</span>
 
     <div class="toolBarContents">
-        <button routerLink="" mat-button>
+        <button routerLink="/dashboard" mat-button routerLinkActive #dashboardLink="routerLinkActive"
+            [color]="dashboardLink.isActive?'primary':'undefined'">
             <mat-icon>dashboard</mat-icon>
             Dashboard
         </button>
@@ -38,18 +39,20 @@
     </div>
 </mat-toolbar>
 
-
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav mode="side" #sidenav class="sidenav">
-        <mat-action-list>
-            <a mat-list-item routerLink="/home">
-                Home
-            </a>
-            <a mat-list-item routerLink="/profile">Profile</a>
-            <a mat-list-item routerLink="/classes">Classes</a>
-            <a mat-list-item routerLink="/grades">Grades</a>
-            <a mat-list-item routerLink="/attendance">Attendance</a>
-        </mat-action-list>
+        <div class="sidenavContent">
+            <button mat-button routerLink="home" routerLinkActive #homeLink="routerLinkActive"
+                [color]="homeLink.isActive?'primary':'undefined'">Home</button>
+            <button mat-button routerLink="profile" routerLinkActive #profileLink="routerLinkActive"
+                [color]="profileLink.isActive?'primary':'undefined'">Profile</button>
+            <button mat-button routerLink="classes" routerLinkActive #classesLink="routerLinkActive"
+                [color]="classesLink.isActive?'primary':'undefined'">Classes</button>
+            <button mat-button routerLink="grades" routerLinkActive #gradesLink="routerLinkActive"
+                [color]="gradesLink.isActive?'primary':'undefined'">Grades</button>
+            <button mat-button routerLink="attendance" routerLinkActive #attendanceLink="routerLinkActive"
+                [color]="attendanceLink.isActive?'primary':'undefined'">Attendance</button>
+        </div>
     </mat-sidenav>
     <mat-sidenav-content>
         <router-outlet></router-outlet>

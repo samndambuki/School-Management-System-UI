@@ -15,21 +15,16 @@ export class SidenavService {
 
   public toggle() {
     const currentState = this.sideNavToggleSubject.value;
-    console.log(`SidenavService.toggle(): currentState = ${currentState}`);
     this.sideNavToggleSubject.next(!currentState);
-    console.log(`SidenavService.toggle(): newState = ${!currentState}`);
-
   }
 
   //method to open the sidenav
   public open() {
-    console.log('SidenavService.open() called')
     this.sideNavToggleSubject.next(true)
   }
 
   //method to close the sidenav
   public close() {
-    console.log('SidenavService.close() called');
     this.sideNavToggleSubject.next(false);
   }
 

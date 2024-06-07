@@ -6,7 +6,8 @@ import { StudentDashboardHomeComponent } from './student-dashboard-home/student-
 
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
+  { path: 'dashboard', component: DashboardComponent },
   {
     path: 'student-dashboard', component: StudentDashboardComponent,
     data: { active: 'student-dashboard' },
