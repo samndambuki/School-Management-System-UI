@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { XsrfInterceptor } from './xsrf-interceptor.interceptor';
+import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
+import { TeacherDashboardHomeComponent } from './teacher-dashboard-home/teacher-dashboard-home.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { XsrfInterceptor } from './xsrf-interceptor.interceptor';
     StudentDashboardComponent,
     StudentDashboardHomeComponent,
     AddStudentDialogComponent,
+    TeacherDashboardComponent,
+    TeacherDashboardHomeComponent,
   ],
   imports: [
     BrowserModule,

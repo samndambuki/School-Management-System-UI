@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { StudentDashboardHomeComponent } from './student-dashboard-home/student-dashboard-home.component';
+import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
+import { TeacherDashboardHomeComponent } from './teacher-dashboard-home/teacher-dashboard-home.component';
 
 
 const routes: Routes = [
@@ -16,7 +18,15 @@ const routes: Routes = [
       {
         path: 'home', component: StudentDashboardHomeComponent,
         data: { active: 'home' }
-      }
+      },
+    ],
+  },
+  {
+    path: 'teacher-dashboard', component: TeacherDashboardComponent,
+    data: { active: 'teacher-dashboard' },
+    children: [
+      { path: '', redirectTo: 'teacher-dashboard-home', pathMatch: 'prefix' },
+      { path: 'teacher-dashboard-home', component: TeacherDashboardHomeComponent }
     ]
   }
 

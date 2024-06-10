@@ -1,5 +1,5 @@
 <mat-toolbar style="position: sticky;top: 0;z-index: 5;">
-    <button (click)="clickMenu()" mat-icon-button>
+    <button mat-icon-button (click)="clickMenu()">
         <mat-icon>menu</mat-icon>
     </button>
 
@@ -19,7 +19,8 @@
             <mat-icon>group</mat-icon>
             Students
         </button>
-        <button mat-button routerLink="/teacher-dashboard">
+        <button mat-button routerLink="/teacher-dashboard" routerLinkActive #teacherLink="routerLinkActive"
+            [color]="teacherLink.isActive?'primary':'undefined'">
             <mat-icon>
                 group
             </mat-icon>
@@ -32,21 +33,13 @@
             <mat-icon>group</mat-icon>
             Enrollments
         </button>
-
     </div>
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav mode="side" #sidenav class="sidenav">
         <div class="sidenavContent">
-            <button mat-button routerLink="home" routerLinkActive #homeLink="routerLinkActive"
-                [color]="homeLink.isActive?'primary':'undefined'">Home</button>
-            <button mat-button routerLink="classes" routerLinkActive #classesLink="routerLinkActive"
-                [color]="classesLink.isActive?'primary':'undefined'">Classes</button>
-            <button mat-button routerLink="grades" routerLinkActive #gradesLink="routerLinkActive"
-                [color]="gradesLink.isActive?'primary':'undefined'">Grades</button>
-            <button mat-button routerLink="attendance" routerLinkActive #attendanceLink="routerLinkActive"
-                [color]="attendanceLink.isActive?'primary':'undefined'">Attendance</button>
+            <button mat-button routerLink="/teacher-dashboard-home">Home</button>
         </div>
     </mat-sidenav>
     <mat-sidenav-content>

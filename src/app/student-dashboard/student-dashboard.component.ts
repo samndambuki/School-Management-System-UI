@@ -13,20 +13,7 @@ export class StudentDashboardComponent implements OnDestroy, AfterViewInit {
 
   private sidenavSubscription: Subscription | null = null;
 
-  constructor(private sideNavService: SidenavService) {
-    this.sidenavSubscription = this.sideNavService.getSidenavState().subscribe(isOpen => {
-
-      if (isOpen) {
-        this.sidenav?.open();
-      }
-      else {
-        this.sidenav?.close();
-      }
-    })
-
-    //open the sidenav when the component initializes
-    this.sideNavService.open();
-  }
+  constructor(private sideNavService: SidenavService) { }
 
   ngAfterViewInit() {
     this.sidenavSubscription = this.sideNavService.getSidenavState().subscribe(isOpen => {

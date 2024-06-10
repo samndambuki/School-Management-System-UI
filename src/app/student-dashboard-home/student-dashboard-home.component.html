@@ -20,15 +20,15 @@
 
 <!-- {{students|json}} -->
 
-<div>
-    <table *ngIf="students" [dataSource]="students.data" mat-table class="mat-elevation-z8">
-        <!-- ng-container - an angular directive that acts as a plaehoder in the template -->
-        <!-- it does not add extra nodes to the DOM -->
+<!-- <div>
+    <table *ngIf="students" [dataSource]="students.data" mat-table class="mat-elevation-z8"> -->
+<!-- ng-container - an angular directive that acts as a plaehoder in the template -->
+<!-- it does not add extra nodes to the DOM -->
 
-        <!-- matColumnDef - directive is used to define a column in the angular material table -->
-        <!-- first name is the unique name for the column and will be used to identify and reference this column -->
+<!-- matColumnDef - directive is used to define a column in the angular material table -->
+<!-- first name is the unique name for the column and will be used to identify and reference this column -->
 
-        <ng-container matColumnDef="first_name">
+<!-- <ng-container matColumnDef="first_name">
             <th mat-header-cell *matHeaderCellDef>First Name</th>
             <td mat-cell *matCellDef="let student" {{student.first_name}}></td>
         </ng-container>
@@ -63,6 +63,6 @@
         <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
     </table>
 
-</div>
+</div> -->
 
 <!-- <mat-paginator *ngIf="students" [showFirstLastButtons]="true" [pageSizeOptions]="[5,10,20]"></mat-paginator> -->

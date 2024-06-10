@@ -14,7 +14,7 @@
             <mat-icon>group</mat-icon>
             Students
         </button>
-        <button mat-button>
+        <button routerLink="/teacher-dashboard" mat-button>
             <mat-icon>
                 group
             </mat-icon>
@@ -27,10 +27,6 @@
             <mat-icon>group</mat-icon>
             Enrollments
         </button>
-        <button mat-raised-button color="primary">
-            <mat-icon>add</mat-icon>
-            New
-        </button>
     </div>
 </mat-toolbar>
 
@@ -38,7 +34,6 @@
 
     <div class="dashboard">
         <h1>Dashboard</h1>
-        <button mat-button>New</button>
     </div>
 
     <div class="quickAccess">
@@ -53,7 +48,7 @@
                     <p>Manage Students</p>
                 </mat-card-content>
             </mat-card>
-            <mat-card class="example-card">
+            <mat-card class="example-card" routerLink="/teacher-dashboard">
                 <mat-card-header>
                     <mat-card-title><mat-icon>group</mat-icon></mat-card-title>
                     <mat-card-subtitle>Teachers</mat-card-subtitle>
@@ -187,9 +182,4 @@
             </mat-card>
         </div>
     </div>
-
-    <div class="alerts">
-        <h2>Alerts</h2>
-    </div>
-
 </div>
