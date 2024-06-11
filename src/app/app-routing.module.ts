@@ -12,21 +12,20 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   {
     path: 'student-dashboard', component: StudentDashboardComponent,
-    data: { active: 'student-dashboard' },
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'prefix' },
       {
         path: 'home', component: StudentDashboardHomeComponent,
-        data: { active: 'home' }
       },
     ],
   },
   {
     path: 'teacher-dashboard', component: TeacherDashboardComponent,
-    data: { active: 'teacher-dashboard' },
     children: [
-      { path: '', redirectTo: 'teacher-dashboard-home', pathMatch: 'prefix' },
-      { path: 'teacher-dashboard-home', component: TeacherDashboardHomeComponent }
+      { path: '', redirectTo: 'home', pathMatch: 'prefix' },
+      {
+        path: 'home', component: TeacherDashboardHomeComponent,
+      }
     ]
   }
 

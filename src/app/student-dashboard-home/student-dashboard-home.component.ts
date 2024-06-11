@@ -19,7 +19,7 @@ export class StudentDashboardHomeComponent {
   //paginator:MatPaginator - :MatPaginator is the property name
   //! - non-null assertion operator. tells typescript compiler that a particular variable will not be null or undefined
   // @ViewChild(MatPaginator) paginator!: MatPaginator;
-  students: StudentsResponse | undefined
+  students: any
 
   constructor(private dialog: MatDialog, private api: ApiService, private http: HttpClient) {
     this.get_students();

@@ -39,7 +39,8 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav mode="side" #sidenav class="sidenav">
         <div class="sidenavContent">
-            <button mat-button routerLink="/teacher-dashboard-home">Home</button>
+            <button mat-button routerLink="home" routerLinkActive #homeLink="routerLinkActive"
+                [color]="homeLink.isActive?'primary':'undefined'">Home</button>
         </div>
     </mat-sidenav>
     <mat-sidenav-content>

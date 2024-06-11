@@ -17,6 +17,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { XsrfInterceptor } from './xsrf-interceptor.interceptor';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { TeacherDashboardHomeComponent } from './teacher-dashboard-home/teacher-dashboard-home.component';
+import { AddTeacherDialogComponent } from './add-teacher-dialog/add-teacher-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TeacherDashboardHomeComponent } from './teacher-dashboard-home/teacher-
     AddStudentDialogComponent,
     TeacherDashboardComponent,
     TeacherDashboardHomeComponent,
+    AddTeacherDialogComponent,
   ],
   imports: [
     BrowserModule,

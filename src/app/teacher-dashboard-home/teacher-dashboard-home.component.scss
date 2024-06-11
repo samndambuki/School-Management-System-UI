@@ -1,0 +1,20 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.example-card {
+  width: 1200px;
+  height: 300px;
+}
+
+.cards {
+  margin-top: 1rem;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 1rem;
+}
