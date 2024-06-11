@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddStudentDialogComponent } from '../add-student-dialog/add-student-dialog.component';
 import { ApiService } from '../api.service';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Student, StudentsResponse } from '../shared/interfaces/student.interface';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-student-dashboard-home',
@@ -19,16 +20,21 @@ export class StudentDashboardHomeComponent {
   //paginator:MatPaginator - :MatPaginator is the property name
   //! - non-null assertion operator. tells typescript compiler that a particular variable will not be null or undefined
   // @ViewChild(MatPaginator) paginator!: MatPaginator;
-  students: any
+  students: StudentsResponse | undefined
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private dialog: MatDialog, private api: ApiService, private http: HttpClient) {
     this.get_students();
   }
 
   addStudent() {
-    this.dialog.open(AddStudentDialogComponent,
+    let dialogRef = this.dialog.open(AddStudentDialogComponent,
       { width: '900px' }
     )
+    dialogRef.afterClosed().subscribe(() => {
+      this.get_students();
+    })
   }
 
   get_students() {
@@ -36,10 +42,13 @@ export class StudentDashboardHomeComponent {
     this.http.get(url, { withCredentials: true, observe: 'response' }).subscribe({
       next: (response: HttpResponse<any>) => {
         if (response.ok) {
-          this.students = response.body.students
+          this.dataSource.data = response.body.students
+          this.dataSource.paginator = this.paginator
         }
       }
     })
   }
+
+  onPageChange(event: any) { }
 
 }

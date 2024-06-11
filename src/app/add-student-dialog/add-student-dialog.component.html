@@ -13,7 +13,7 @@
 
         <mat-form-field style="width: 100%;">
             <mat-label>Date of birth</mat-label>
-            <input matInput [matDatepicker]="picker">
+            <input matInput [matDatepicker]="picker" formControlName="date_of_birth">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
@@ -21,7 +21,7 @@
 
         <mat-form-field style="width: 100%;">
             <mat-label>Select Gender</mat-label>
-            <mat-select>
+            <mat-select formControlName="gender">
                 <mat-option value="male">Male</mat-option>
                 <mat-option value="female">Female</mat-option>
             </mat-select>
