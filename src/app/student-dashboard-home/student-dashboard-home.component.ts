@@ -5,7 +5,7 @@ import { ApiService } from '../api.service';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Student, StudentsResponse } from '../shared/interfaces/student.interface';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-student-dashboard-home',
@@ -43,13 +43,12 @@ export class StudentDashboardHomeComponent {
       next: (response: HttpResponse<any>) => {
         if (response.ok) {
           this.dataSource.data = response.body.students
-          // this.students = response.body
           this.dataSource.paginator = this.paginator
         }
       }
     })
   }
 
-  onPageChange(event: any) { }
+  onPageChange(event: PageEvent) { }
 
 }
