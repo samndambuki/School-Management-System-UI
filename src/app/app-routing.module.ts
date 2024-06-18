@@ -5,6 +5,8 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
 import { StudentDashboardHomeComponent } from './student-dashboard-home/student-dashboard-home.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { TeacherDashboardHomeComponent } from './teacher-dashboard-home/teacher-dashboard-home.component';
+import { ClassesDashboardComponent } from './classes-dashboard/classes-dashboard.component';
+import { ClassesDashboardHomeComponent } from './classes-dashboard-home/classes-dashboard-home.component';
 
 
 const routes: Routes = [
@@ -27,8 +29,13 @@ const routes: Routes = [
         path: 'home', component: TeacherDashboardHomeComponent,
       }
     ]
+  },
+  {
+    path: 'classes-dashboard', component: ClassesDashboardComponent, children: [
+      { path: '', redirectTo: 'home', pathMatch: 'prefix' },
+      { path: 'home', component: ClassesDashboardHomeComponent }
+    ]
   }
-
 ];
 
 @NgModule({

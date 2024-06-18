@@ -18,6 +18,9 @@ import { XsrfInterceptor } from './xsrf-interceptor.interceptor';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { TeacherDashboardHomeComponent } from './teacher-dashboard-home/teacher-dashboard-home.component';
 import { AddTeacherDialogComponent } from './add-teacher-dialog/add-teacher-dialog.component';
+import { ClassesDashboardComponent } from './classes-dashboard/classes-dashboard.component';
+import { ClassesDashboardHomeComponent } from './classes-dashboard-home/classes-dashboard-home.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { AddTeacherDialogComponent } from './add-teacher-dialog/add-teacher-dial
     TeacherDashboardComponent,
     TeacherDashboardHomeComponent,
     AddTeacherDialogComponent,
+    ClassesDashboardComponent,
+    ClassesDashboardHomeComponent,
+    ToolbarComponent,
   ],
   imports: [
     BrowserModule,
