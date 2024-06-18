@@ -31,7 +31,8 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'classes-dashboard', component: ClassesDashboardComponent, children: [
+    path: 'classes-dashboard', component: ClassesDashboardComponent,
+    children: [
       { path: '', redirectTo: 'home', pathMatch: 'prefix' },
       { path: 'home', component: ClassesDashboardHomeComponent }
     ]
