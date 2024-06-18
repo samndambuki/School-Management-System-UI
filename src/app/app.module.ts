@@ -21,6 +21,7 @@ import { AddTeacherDialogComponent } from './add-teacher-dialog/add-teacher-dial
 import { ClassesDashboardComponent } from './classes-dashboard/classes-dashboard.component';
 import { ClassesDashboardHomeComponent } from './classes-dashboard-home/classes-dashboard-home.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { AddClassDialogComponent } from './add-class-dialog/add-class-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     ClassesDashboardComponent,
     ClassesDashboardHomeComponent,
     ToolbarComponent,
+    AddClassDialogComponent,
   ],
   imports: [
     BrowserModule,
