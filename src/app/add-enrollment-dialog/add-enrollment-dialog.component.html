@@ -6,10 +6,17 @@
 <form [formGroup]="enrollment_form" (ngSubmit)="add_enrollment()">
     <mat-dialog-content>
         <mat-form-field style="width: 100%;">
-            <input matInput placeholder="Student Id" formControlName="student_id">
+            <mat-label>Select Student Id</mat-label>
+            <mat-select formControlName="student_id">
+                <mat-option *ngFor="let student of students" [value]="student.id">{{student.id}}</mat-option>
+            </mat-select>
         </mat-form-field>
         <mat-form-field style="width: 100%;">
-            <input matInput placeholder="Class Id" formControlName="class_id">
+            <!-- <input matInput placeholder="Class Id" formControlName="class_id"> -->
+            <mat-label>Select Class Id</mat-label>
+            <mat-select formControlName="class_id">
+                <mat-option *ngFor="let class of classes" [value]="class.id">{{class.id}}</mat-option>
+            </mat-select>
         </mat-form-field>
     </mat-dialog-content>
     <mat-dialog-actions>
