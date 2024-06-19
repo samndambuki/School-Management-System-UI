@@ -34,6 +34,7 @@ export class EnrollmentsDashboardHomeComponent {
     this.http.get(url, { withCredentials: true, observe: 'response' }).subscribe({
       next: (response: HttpResponse<any>) => {
         this.dataSource.data = response.body.enrollments
+        this.dataSource.paginator = this.paginator
       }
     })
   }
