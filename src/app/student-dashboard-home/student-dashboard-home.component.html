@@ -24,6 +24,12 @@
 
 <table style="margin-top: 1rem;margin-bottom: 1rem;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
+    <!-- student_id column -->
+    <ng-container matColumnDef="student_id">
+        <th mat-header-cell *matHeaderCellDef>Student Id</th>
+        <td mat-cell *matCellDef="let student">{{student.id}}</td>
+    </ng-container>
+
     <!-- First Name Column -->
     <ng-container matColumnDef="first_name">
         <th mat-header-cell *matHeaderCellDef> First Name </th>

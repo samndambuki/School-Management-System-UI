@@ -15,7 +15,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 export class ClassesDashboardHomeComponent {
 
   @ViewChild(MatPaginator) paginator: MatPaginator | null = null;
-  displayedColumns: string[] = ['name', 'description']
+  displayedColumns: string[] = ['class_id', 'name', 'description']
   dataSource = new MatTableDataSource<Class>()
 
   constructor(private dialog: MatDialog, private api: ApiService, private http: HttpClient) {

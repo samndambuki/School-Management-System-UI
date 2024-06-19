@@ -7,6 +7,8 @@ import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard
 import { TeacherDashboardHomeComponent } from './teacher-dashboard-home/teacher-dashboard-home.component';
 import { ClassesDashboardComponent } from './classes-dashboard/classes-dashboard.component';
 import { ClassesDashboardHomeComponent } from './classes-dashboard-home/classes-dashboard-home.component';
+import { EnrollmentsDashboardComponent } from './enrollments-dashboard/enrollments-dashboard.component';
+import { EnrollmentsDashboardHomeComponent } from './enrollments-dashboard-home/enrollments-dashboard-home.component';
 
 
 const routes: Routes = [
@@ -35,6 +37,13 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'prefix' },
       { path: 'home', component: ClassesDashboardHomeComponent }
+    ]
+  },
+  {
+    path: 'enrollments-dashboard', component: EnrollmentsDashboardComponent,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'prefix' },
+      { path: 'home', component: EnrollmentsDashboardHomeComponent }
     ]
   }
 ];

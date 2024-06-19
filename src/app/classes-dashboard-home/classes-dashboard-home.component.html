@@ -13,7 +13,13 @@
     <button style="margin-top: 1rem;" mat-button (click)="addClass()">Add Class</button>
 </div>
 
-<table mat-table [dataSource]="dataSource">
+<table style="margin-top:1rem" mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="class_id">
+        <th mat-header-cell *matHeaderCellDef>Class Id</th>
+        <td mat-cell *matCellDef="let class">{{class.id}}</td>
+    </ng-container>
+
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Name</th>
         <td mat-cell *matCellDef="let class">{{class.name}}</td>

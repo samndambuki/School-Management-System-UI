@@ -13,7 +13,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
   styleUrls: ['./student-dashboard-home.component.scss']
 })
 export class StudentDashboardHomeComponent {
-  displayedColumns: string[] = ['first_name', 'last_name', 'date_of_birth', 'gender', 'address', 'phone_number'];
+  displayedColumns: string[] = ['student_id', 'first_name', 'last_name', 'date_of_birth', 'gender', 'address', 'phone_number'];
   dataSource = new MatTableDataSource<Student>();
   //view child decorator is used to get reference to a child element
   //@ViewChild(MatPaginator) - tells angular to look for MatPaginator directive inside the template

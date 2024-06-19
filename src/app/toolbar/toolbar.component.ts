@@ -17,7 +17,7 @@ export class ToolbarComponent {
         this.sidenav?.open()
       }
       else {
-        this.sidenavService.close()
+        this.sidenav?.close()
       }
     })
     this.sidenav?.open();
