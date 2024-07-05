@@ -10,7 +10,7 @@
                 <input matInput placeholder="Password" formControlName="password">
             </mat-form-field>
             <div mat-dialog-actions>
-                <button mat-button>LOGIN</button>
+                <button mat-button type="submit" (click)="login()">LOGIN</button>
                 <button mat-button routerLink="sign-up">SIGN UP</button>
             </div>
         </form>
