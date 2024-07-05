@@ -6,8 +6,15 @@
             </mat-card-title>
             <mat-card-subtitle></mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content>
-
+        <mat-card-content class="dashboard-card-content">
+            <div style="display: flex;flex-direction: column;gap: 16px;">
+                <div class="mat-headline-2">
+                    {{dataSource.data.length}}
+                </div>
+                <div class="mat-caption">
+                    Number Of Classes
+                </div>
+            </div>
         </mat-card-content>
     </mat-card>
     <button style="margin-top: 1rem;" mat-button (click)="addClass()">Add Class</button>

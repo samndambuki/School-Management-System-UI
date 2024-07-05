@@ -25,6 +25,8 @@ import { AddClassDialogComponent } from './add-class-dialog/add-class-dialog.com
 import { EnrollmentsDashboardComponent } from './enrollments-dashboard/enrollments-dashboard.component';
 import { EnrollmentsDashboardHomeComponent } from './enrollments-dashboard-home/enrollments-dashboard-home.component';
 import { AddEnrollmentDialogComponent } from './add-enrollment-dialog/add-enrollment-dialog.component';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { AddEnrollmentDialogComponent } from './add-enrollment-dialog/add-enroll
     EnrollmentsDashboardComponent,
     EnrollmentsDashboardHomeComponent,
     AddEnrollmentDialogComponent,
+    LoginComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

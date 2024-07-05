@@ -9,9 +9,13 @@ import { ClassesDashboardComponent } from './classes-dashboard/classes-dashboard
 import { ClassesDashboardHomeComponent } from './classes-dashboard-home/classes-dashboard-home.component';
 import { EnrollmentsDashboardComponent } from './enrollments-dashboard/enrollments-dashboard.component';
 import { EnrollmentsDashboardHomeComponent } from './enrollments-dashboard-home/enrollments-dashboard-home.component';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'sign-up', component: SignUpComponent },
   { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
   { path: 'dashboard', component: DashboardComponent },
   {
