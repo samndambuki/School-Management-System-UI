@@ -14,4 +14,8 @@ export class LoginComponent {
     password: new FormControl()
   })
   constructor(private api: ApiService, private http: HttpClient) { }
+  login() {
+    // const url = `${}`
+    // this.http.post()
+  }
 }
