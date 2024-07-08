@@ -14,10 +14,12 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
+
   { path: 'dashboard', component: DashboardComponent },
+
   {
     path: 'student-dashboard', component: StudentDashboardComponent,
     children: [

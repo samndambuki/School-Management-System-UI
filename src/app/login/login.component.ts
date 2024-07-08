@@ -16,12 +16,13 @@ export class LoginComponent {
   })
   constructor(private api: ApiService, private http: HttpClient, private router: Router) { }
   login() {
-    const url = `${this.api.base_uri_api}login`
+    const url = `${this.api.base_uri}login`
     const formData = this.loginForm.value
-    this.http.post(url, { formData }, { withCredentials: true, observe: 'response' }).subscribe({
+    this.http.post(url, formData, { withCredentials: true, observe: 'response' }).subscribe({
       next: (response: HttpResponse<any>) => {
         if (response.ok) {
-          this.router.navigate(['dashboard'])
+          this.loginForm.reset();
+          this.router.navigate(['/dashboard'])
         }
       }
     })
