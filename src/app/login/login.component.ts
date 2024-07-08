@@ -22,7 +22,7 @@ export class LoginComponent {
       next: (response: HttpResponse<any>) => {
         if (response.ok) {
           this.loginForm.reset();
-          this.router.navigate(['/dashboard'])
+          // this.router.navigate(['/dashboard']);
         }
       }
     })

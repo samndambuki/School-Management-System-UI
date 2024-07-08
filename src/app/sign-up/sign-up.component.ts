@@ -19,7 +19,7 @@ export class SignUpComponent {
   constructor(private http: HttpClient, private api: ApiService) { }
 
   on_sign_up() {
-    const url = `${this.api.base_uri}register`;
+    const url = `${this.api.base_uri_api}register`;
     const formData = this.signUpForm.value
     this.http.post(url, formData, { withCredentials: true, observe: 'response' }).subscribe({
       next: (response: HttpResponse<any>) => {
