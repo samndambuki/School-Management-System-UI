@@ -6,6 +6,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Student, StudentsResponse } from '../shared/interfaces/student.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { EditStudentDialogComponent } from '../edit-student-dialog/edit-student-dialog.component';
 
 @Component({
   selector: 'app-student-dashboard-home',
@@ -13,7 +14,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
   styleUrls: ['./student-dashboard-home.component.scss']
 })
 export class StudentDashboardHomeComponent {
-  displayedColumns: string[] = ['student_id', 'first_name', 'last_name', 'date_of_birth', 'gender', 'address', 'phone_number'];
+  displayedColumns: string[] = ['student_id', 'first_name', 'last_name', 'date_of_birth', 'gender', 'address', 'phone_number','actions'];
   dataSource = new MatTableDataSource<Student>();
   //view child decorator is used to get reference to a child element
   //@ViewChild(MatPaginator) - tells angular to look for MatPaginator directive inside the template
@@ -34,6 +35,16 @@ export class StudentDashboardHomeComponent {
     )
     dialogRef.afterClosed().subscribe(() => {
       this.get_students();
+    })
+  }
+
+  edit_student(student:Student){
+    let dialogRef = this.dialog.open(EditStudentDialogComponent,{
+      width:'900px',
+      data:student
+    })
+    dialogRef.afterClosed().subscribe(()=>{
+      this.get_students()
     })
   }
 

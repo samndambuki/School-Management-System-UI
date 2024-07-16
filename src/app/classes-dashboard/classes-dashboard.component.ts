@@ -12,7 +12,6 @@ export class ClassesDashboardComponent implements AfterViewInit {
   @ViewChild('sidenav') public sidenav!: MatSidenav;
   public sidenavSubscription: Subscription | null = null;
   constructor(private sidenavService: SidenavService) {
-
   }
 
   ngAfterViewInit() {

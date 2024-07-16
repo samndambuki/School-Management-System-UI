@@ -14,7 +14,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'prefix' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignUpComponent },
 
@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: 'student-dashboard', component: StudentDashboardComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'prefix' },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       {
         path: 'home', component: StudentDashboardHomeComponent,
       },
@@ -32,7 +32,7 @@ const routes: Routes = [
   {
     path: 'teacher-dashboard', component: TeacherDashboardComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'prefix' },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       {
         path: 'home', component: TeacherDashboardHomeComponent,
       }
@@ -41,14 +41,14 @@ const routes: Routes = [
   {
     path: 'classes-dashboard', component: ClassesDashboardComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'prefix' },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: ClassesDashboardHomeComponent }
     ]
   },
   {
     path: 'enrollments-dashboard', component: EnrollmentsDashboardComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'prefix' },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: EnrollmentsDashboardHomeComponent }
     ]
   }

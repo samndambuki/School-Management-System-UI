@@ -21,8 +21,7 @@ export class LoginComponent {
     this.http.post(url, formData, { withCredentials: true, observe: 'response' }).subscribe({
       next: (response: HttpResponse<any>) => {
         if (response.ok) {
-          this.loginForm.reset();
-          // this.router.navigate(['/dashboard']);
+          this.loginForm.reset()
         }
       }
     })
