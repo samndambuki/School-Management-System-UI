@@ -28,6 +28,7 @@ import { AddEnrollmentDialogComponent } from './add-enrollment-dialog/add-enroll
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { EditStudentDialogComponent } from './edit-student-dialog/edit-student-dialog.component';
+import { EditTeacherDialogComponent } from './edit-teacher-dialog/edit-teacher-dialog.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { EditStudentDialogComponent } from './edit-student-dialog/edit-student-d
     LoginComponent,
     SignUpComponent,
     EditStudentDialogComponent,
+    EditTeacherDialogComponent,
   ],
   imports: [
     BrowserModule,

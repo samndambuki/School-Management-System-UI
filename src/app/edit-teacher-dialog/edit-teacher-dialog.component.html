@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Edit Teacher</h1>
+<form>
+  <mat-dialog-content>
+    <mat-form-field style="width: 100%">
+      <input matInput placeholder="First Name" formControlName="first_name" />
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input matInput placeholder="Last Name" formControlName="last_name" />
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <mat-label>Date Of Birth</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="date_of_birth"
+      />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </mat-dialog-content>
+</form>
