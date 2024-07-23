@@ -28,8 +28,11 @@ export class TeacherDashboardHomeComponent {
   }
 
   add_teacher() {
-    this.dialog.open(AddTeacherDialogComponent, {
+    let dialogRef = this.dialog.open(AddTeacherDialogComponent, {
       width: '900px',
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      this.get_teachers();
     });
   }
 
@@ -62,9 +65,12 @@ export class TeacherDashboardHomeComponent {
   onPageChange(event: PageEvent) {}
 
   edit_teacher(teacher: Teacher) {
-    this.dialog.open(EditTeacherDialogComponent, {
+    let dialogRef = this.dialog.open(EditTeacherDialogComponent, {
       width: '900px',
       data: teacher,
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      this.get_teachers();
     });
   }
 

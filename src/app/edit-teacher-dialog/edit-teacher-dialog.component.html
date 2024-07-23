@@ -1,5 +1,5 @@
 <h1 mat-dialog-title>Edit Teacher</h1>
-<form>
+<form [formGroup]="teacherForm" (ngSubmit)="edit_teacher()">
   <mat-dialog-content>
     <mat-form-field style="width: 100%">
       <input matInput placeholder="First Name" formControlName="first_name" />
@@ -21,5 +21,31 @@
       ></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input matInput placeholder="Gender" formControlName="gender" />
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input matInput placeholder="Address" formControlName="address" />
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input
+        matInput
+        placeholder="Phone Number"
+        formControlName="phone_number"
+      />
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input
+        matInput
+        placeholder="qualification"
+        formControlName="qualification"
+      />
+    </mat-form-field>
   </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close="" color="primary">CANCEL</button>
+    <button mat-raised-button (click)="edit_teacher()" color="primary">
+      SUBMIT
+    </button>
+  </mat-dialog-actions>
 </form>
