@@ -29,6 +29,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { EditStudentDialogComponent } from './edit-student-dialog/edit-student-dialog.component';
 import { EditTeacherDialogComponent } from './edit-teacher-dialog/edit-teacher-dialog.component';
+import { EditClassDialogComponent } from './edit-class-dialog/edit-class-dialog.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { EditTeacherDialogComponent } from './edit-teacher-dialog/edit-teacher-d
     SignUpComponent,
     EditStudentDialogComponent,
     EditTeacherDialogComponent,
+    EditClassDialogComponent,
   ],
   imports: [
     BrowserModule,
