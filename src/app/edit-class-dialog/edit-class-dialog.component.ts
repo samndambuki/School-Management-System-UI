@@ -4,6 +4,7 @@ import { ApiService } from '../api.service';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Class } from '../shared/interfaces/class.interface';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-edit-class-dialog',
@@ -17,7 +18,8 @@ export class EditClassDialogComponent {
     private http: HttpClient,
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public school_class: Class,
-    private dialogRef: MatDialogRef<EditClassDialogComponent>
+    private dialogRef: MatDialogRef<EditClassDialogComponent>,
+    private snackBar: MatSnackBar
   ) {
     this.editClassForm = this.fb.group({
       name: new FormControl(school_class.name),
@@ -37,10 +39,5 @@ export class EditClassDialogComponent {
           }
         },
       });
-  }
-
-  delete_class() {
-    // const url = `${this.api.base_uri_api}classes/${this.school_class.id}`;
-    // this.http.delete(url, { withCredentials: true, observe: 'response' });
   }
 }

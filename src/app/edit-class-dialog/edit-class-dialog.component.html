@@ -13,11 +13,9 @@
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button (click)="edit_class()">
-      <mat-icon>edit</mat-icon>
-    </button>
-    <button mat-button color="warn">
-      <mat-icon>delete</mat-icon>
+    <button mat-button mat-dialog-close="">CANCEL</button>
+    <button mat-raised-button (click)="edit_class()" color="primary">
+      SUBMIT
     </button>
   </mat-dialog-actions>
 </form>

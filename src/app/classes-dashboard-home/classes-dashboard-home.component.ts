@@ -7,6 +7,7 @@ import { Class } from '../shared/interfaces/class.interface';
 import { ApiService } from '../api.service';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { EditClassDialogComponent } from '../edit-class-dialog/edit-class-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-classes-dashboard-home',
@@ -21,7 +22,8 @@ export class ClassesDashboardHomeComponent {
   constructor(
     private dialog: MatDialog,
     private api: ApiService,
-    private http: HttpClient
+    private http: HttpClient,
+    private snackBar: MatSnackBar
   ) {
     this.get_classes();
   }
@@ -56,6 +58,25 @@ export class ClassesDashboardHomeComponent {
     });
     dialogRef.afterClosed().subscribe(() => {
       this.get_classes();
+    });
+  }
+
+  delete_class(school_class: Class) {
+    const confirmationSnackBar = this.snackBar.open(
+      'Confirm Deletion',
+      'Confirm',
+      { duration: 7000 }
+    );
+    confirmationSnackBar.onAction().subscribe(() => {
+      const url = `${this.api.base_uri_api}classes/${school_class.id}`;
+      this.http
+        .delete(url, { withCredentials: true, observe: 'response' })
+        .subscribe({
+          next: (response: HttpResponse<any>) => {
+            if (response.ok) {
+            }
+          },
+        });
     });
   }
 }
