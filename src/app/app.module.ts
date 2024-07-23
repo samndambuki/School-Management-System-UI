@@ -30,6 +30,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { EditStudentDialogComponent } from './edit-student-dialog/edit-student-dialog.component';
 import { EditTeacherDialogComponent } from './edit-teacher-dialog/edit-teacher-dialog.component';
 import { EditClassDialogComponent } from './edit-class-dialog/edit-class-dialog.component';
+import { EditEnrollmentDialogComponent } from './edit-enrollment-dialog/edit-enrollment-dialog.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { EditClassDialogComponent } from './edit-class-dialog/edit-class-dialog.
     EditStudentDialogComponent,
     EditTeacherDialogComponent,
     EditClassDialogComponent,
+    EditEnrollmentDialogComponent,
   ],
   imports: [
     BrowserModule,
